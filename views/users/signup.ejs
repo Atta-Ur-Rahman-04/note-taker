@@ -1,0 +1,50 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row mt-3">
+  <h1 class="col-6 offset-3">SignUp To NoteTaker</h1>
+  <div class="col-6 offset-3">
+    <form
+      action="/signup"
+      method="post"
+      class="needs-validation mt-3"
+      novalidate
+    >
+      <div class="mb-3">
+        <label for="username" class="form-label">Username :</label>
+        <input
+          id="username"
+          type="text"
+          placeholder="Enter Username..."
+          name="username"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Enter a valid Username!</div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email :</label>
+        <input
+          id="email"
+          type="text"
+          placeholder="Enter Your Email..."
+          name="email"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Enter a valid Email!</div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password :</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter Your Password..."
+          name="password"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Enter a Strong Password!</div>
+      </div>
+      <Button class="btn signup-btn">SignUp</Button>
+    </form>
+  </div>
+</div>

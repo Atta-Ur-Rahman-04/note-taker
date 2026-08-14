@@ -1,0 +1,37 @@
+<% layout("/layouts/boilerplate") %>
+
+
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+<% if (notes.length === 0) { %>
+  <% if (typeof query !== 'undefined' && query) { %>
+    <div id="tutorial">
+      <div class="tutorial-icon">🔍</div>
+      <h3>No notes found for "<%= query %>"</h3>
+      <p>Try a different keyword, or <a href="/notes" class="highlight">view all your notes</a> instead.</p>
+    </div>
+  <% } else { %>
+    <div id="tutorial">
+      <div class="tutorial-icon">📝</div>
+      <h3>Your notebook is empty — for now</h3>
+      <p>Every idea, reminder, or random 2am thought starts here. Hit <strong>Create</strong> above, or use the button below — it takes less than 10 seconds.</p>
+      <a href="/notes/new" class="tutorial-cta">Create your first note →</a>
+    </div>
+  <% } %>
+<% } else { %>
+  <% for(let Note of notes){ %>
+    <a href="/notes/<%=Note._id %>" class="notes-link">
+      <div class="col">
+        <div class="card index-card">
+          <div class="card-body">
+            <h5 class="card-title"><b><%= Note.title %></b></h5>
+            <p class="card-subtitle mb-2 text-body"><%= Note.description %></p>
+          </div>
+          <p class="px-3 text-body-secondary mb-2">
+            <%= Note.created_at.toString().split(" ").slice(0,4).join(" -") %>
+          </p>
+        </div>
+      </div>
+    </a>
+  <% } %>
+<% } %>
+  </div>

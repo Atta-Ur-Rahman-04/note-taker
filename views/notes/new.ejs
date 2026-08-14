@@ -1,0 +1,51 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row mt-2">
+  <div class="col-10 offset-1">
+    <h1 class="mb-4">Create a New Note</h1>
+    <form action="/notes" method="post" class="needs-validation" novalidate>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="title" class="form-label">Title :</label>
+          <input
+            id="title"
+            type="text"
+            placeholder="Enter your title"
+            name="Notes[title]"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Enter a valid title!</div>
+        </div>
+        <div class="mb-3 col-md-8">
+          <label for="description" class="form-label">description :</label>
+          <input
+            id="description"
+            type="text"
+            placeholder="Enter a short description"
+            name="Notes[description]"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Enter a valid description!</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="content" class="form-label">Your Note :</label>
+        <textarea
+          id="content"
+          name="Notes[content]"
+          cols="30"
+          rows="6"
+          placeholder="Enter your detail note here..."
+          class="form-control"
+          required
+        ></textarea>
+        <div class="invalid-feedback">Enter a valid note details!</div>
+      </div>
+
+      <button type="submit" class="btn create-btn mt-3">Create</button>
+    </form>
+  </div>
+</div>

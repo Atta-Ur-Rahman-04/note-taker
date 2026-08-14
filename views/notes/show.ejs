@@ -1,0 +1,30 @@
+<% layout("/layouts/boilerplate") %>
+
+<a href="/notes" class="back-link mb-2 d-inline-block"
+  >&larr; Back to All Notes</a
+>
+<h2>Your Note In Details</h2>
+<div class="card mt-3 show-card">
+  <div class="card-body">
+    <h4 class="card-title mb-2"><b><%= note.title %></b></h4>
+    <h5 class="card-subtitle mb-3 text-body-secondary">
+      <%= note.description %>
+    </h5>
+    <hr class="note-divider" />
+    <p class="card-text"><%= note.content %></p>
+    <p class="note-date mb-0">
+      <%= note.created_at.toString().split(" ").slice(0,4).join("-") %>
+    </p>
+  </div>
+</div>
+
+<% if(currUser && currUser._id.equals(note.author._id)) {%>
+<div class="show-btns mb-3">
+  <form action="/notes/<%= note._id %>/edit" method="get">
+    <button class="btn edit-btn mt-3">Edit</button>
+  </form>
+  <form action="/notes/<%= note._id %>?_method=delete" method="post">
+    <button class="btn delete-btn mt-3">Delete</button>
+  </form>
+</div>
+<% } %>
