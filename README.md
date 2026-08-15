@@ -4,7 +4,6 @@ A full-stack note-taking app (MongoDB, Express, Node.js, EJS) with session-based
 
 ---
 
-
 ## Tech Stack
 
 - **Backend:** Node.js, Express 5
