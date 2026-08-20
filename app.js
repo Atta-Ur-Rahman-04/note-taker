@@ -107,7 +107,7 @@ app.all("/*splat", (req, res, next) => {
   next(new ExpressError(404, "page not found"));
 });
 
-// error handling middleware
+// error handling middleware --->
 app.use((err, req, res, next) => {
   let { statusCode = 500, message = "something went wrong!" } = err;
   res.status(statusCode).render("error", { message });
