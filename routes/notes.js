@@ -7,7 +7,7 @@ const noteController = require("../controllers/notes");
 
 // Implementing the Router.route to compact the routes , here we have just to define our route once and then we can accpet the get,post etc request on the same defined route --->
 
-// index route ,create route --->
+// index route , create route --->
 router
   .route("/")
   .get(isLoggedIn, wrapAsync(noteController.index))
