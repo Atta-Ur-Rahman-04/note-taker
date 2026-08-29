@@ -2,6 +2,7 @@
 
 A full-stack note-taking app (MongoDB, Express, Node.js, EJS) with session-based auth and owner-scoped notes. Users sign up, log in, and manage a private collection of notes — create, view, edit, delete, and search — with each note strictly scoped to its author.
 
+
 ---
 
 
