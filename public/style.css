@@ -342,3 +342,31 @@ body {
 .search-btn:hover {
   background-color: #053a2b;
 }
+
+/* Responsive: Home.ejs main-div on phone screens */
+@media (max-width: 768px) {
+  .main-div {
+    flex-direction: column;
+    height: auto;
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .main-div .left,
+  .main-div .right {
+    padding: 1.5rem 0.5rem;
+    height: auto;
+  }
+
+  .main-div .right {
+    margin-left: 0;
+  }
+
+  .main-div .left h1 {
+    font-size: 1.75rem;
+  }
+
+  .main-div .left p {
+    font-size: 1rem;
+  }
+}
